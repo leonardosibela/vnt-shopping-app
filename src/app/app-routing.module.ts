@@ -13,6 +13,11 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
+    path: '',
+    redirectTo: 'shopping-list',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     component: ShoppingListComponent
   }
