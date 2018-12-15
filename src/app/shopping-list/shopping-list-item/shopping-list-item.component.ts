@@ -19,4 +19,8 @@ export class ShoppingListItemComponent implements OnInit {
     this.service.remove(this.shoppingItem.name);
   }
 
+  checkItem() {
+    this.service.check(this.shoppingItem.name);
+  }
+
 }

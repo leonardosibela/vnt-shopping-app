@@ -24,8 +24,10 @@ export class ShoppingListService {
     this.listItems.splice(index, 1);
   }
 
-  check() {
-
+  check(itemName) {
+    let item = this.listItems.find(item => item.name === itemName);
+    item.checked = true;
+    item.amount = 0;
   }
 
 }
