@@ -9,6 +9,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListItemComponent } from './shopping-list/shopping-list-item/shopping-list-item.component';
 import { ShoppingListService } from './shopping-list.service';
 import { AboutComponent } from './about/about.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

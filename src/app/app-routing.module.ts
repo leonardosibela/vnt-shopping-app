@@ -2,15 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { AboutComponent } from './about/about.component';
+import { AuthService } from './auth.service';
 
 const routes: Routes = [
   {
     path: 'shopping-list',
-    component: ShoppingListComponent
+    component: ShoppingListComponent,
+    canActivate: [AuthService]
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    canActivate: [AuthService]
   },
   {
     path: '',
