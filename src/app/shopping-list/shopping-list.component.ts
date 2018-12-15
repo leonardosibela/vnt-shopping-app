@@ -9,12 +9,24 @@ import { ShoppingListService } from '../shopping-list.service';
 export class ShoppingListComponent implements OnInit {
 
   public listItems = [];
+  public itemName = '';
 
   constructor(private shoppingListService: ShoppingListService) {
     this.listItems = shoppingListService.listItems;
   }
 
   ngOnInit() {
+  }
+
+  addItem() {
+    let item = {
+      name: this.itemName,
+      amount: 1,
+      checked: false
+    };
+
+    this.shoppingListService.add(item);
+    this.itemName = '';
   }
 
 }

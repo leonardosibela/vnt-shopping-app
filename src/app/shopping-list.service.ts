@@ -14,5 +14,18 @@ export class ShoppingListService {
       { name: "Laranja", amount: 999, checked: false },
     ];
   }
+  
+  add(item: any): void {
+    this.listItems.push(item);
+  }
+
+  remove(itemName): void {
+    const index = this.listItems.findIndex(item => item.name === itemName);
+    this.listItems.splice(index, 1);
+  }
+
+  check() {
+
+  }
 
 }
