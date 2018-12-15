@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ShoppingListService } from 'src/app/shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list-item',
@@ -9,9 +10,13 @@ export class ShoppingListItemComponent implements OnInit {
 
   @Input() shoppingItem: any = {};
 
-  constructor() { }
+  constructor(private service: ShoppingListService) { }
 
   ngOnInit() {
+  }
+
+  removeItem() {
+    this.service.remove(this.shoppingItem.name);
   }
 
 }
